@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa78721a463e44d7985dfd51b9f69a2b" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="DBServisTakipModel.Aciklama" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Ariza" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Cihaz" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.CihazTur" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.DısServisBolge" Width="1.5" PointX="3.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Durum" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.GarantiBilgi" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.HasarGorunum" Width="1.5" PointX="3.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Islem" Width="1.5" PointX="3.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Kargo" Width="1.5" PointX="3.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Kayit" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Marka" Width="1.5" PointX="1.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Model" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Musteri" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.SaticiFirma" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Servis" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.ServisDurum" Width="1.5" PointX="3.75" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.ServisTur" Width="1.5" PointX="3.75" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.Sonuc" Width="1.5" PointX="3.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.TeslimSekil" Width="1.5" PointX="3.75" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.VKayit" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBServisTakipModel.VKayitDetay" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Aciklama" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Ariza" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Cihaz_GarantiDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Cihaz_GenelDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Cihaz_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Cihaz_SaticiFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Cihaz_Tur" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Tur" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_DısServisBolge" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_CihazDurum" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_GarantiBilgi" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_HasarGorunum" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Islem" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Kargo" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Model" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_SaticiFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_ServisTur" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_Sonuc" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Kayit_TeslimSekil" ManuallyRouted="false" />
+        <AssociationConnector Association="DBServisTakipModel.FK_Model_Marka" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

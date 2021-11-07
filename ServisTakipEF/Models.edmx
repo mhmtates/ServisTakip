@@ -1,0 +1,1894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBServisTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aciklama">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AciklamaAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Soyad" Type="varchar" MaxLength="50" />
+          <Property Name="KullaniciAd" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+          <Property Name="GirisTarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Ariza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArizaAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cihaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TurId" Type="int" />
+          <Property Name="ModelId" Type="int" />
+          <Property Name="SeriNo" Type="varchar" MaxLength="50" />
+          <Property Name="FaturaTarih" Type="datetime" />
+          <Property Name="SaticiFirmaId" Type="int" />
+          <Property Name="TakipNo" Type="varchar" MaxLength="50" />
+          <Property Name="GarantiBilgiId" Type="int" />
+          <Property Name="GenelDurumId" Type="int" />
+          <Property Name="ArizaId" Type="int" />
+          <Property Name="Aksesuar" Type="varchar" MaxLength="100" />
+          <Property Name="HasarDısGorunumId" Type="int" />
+          <Property Name="ParcaUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="İscilikUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ArızaTespitUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ToplamUcret" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="CihazTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TurAd" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="DısServisBolge">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolgeAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Durum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DurumAd" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="GarantiBilgi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GarantiBilgiAd" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="HasarGorunum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HasarGorunumAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Islem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IslemAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kargo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KargoAd" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Kayit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MusteriAd" Type="varchar" MaxLength="50" />
+          <Property Name="Adres" Type="varchar" MaxLength="100" />
+          <Property Name="TelNo" Type="varchar" MaxLength="50" />
+          <Property Name="GsmNo" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="TCNo" Type="varchar" MaxLength="50" />
+          <Property Name="GelisTarih" Type="datetime" Nullable="false" />
+          <Property Name="CihazTurId" Type="int" />
+          <Property Name="MarkaId" Type="int" />
+          <Property Name="ModelId" Type="int" />
+          <Property Name="SeriNo" Type="varchar" MaxLength="50" />
+          <Property Name="FaturaTarih" Type="datetime" Nullable="false" />
+          <Property Name="SaticiFirmaId" Type="int" />
+          <Property Name="TakipNo" Type="varchar" MaxLength="50" />
+          <Property Name="GarantiBilgiId" Type="int" />
+          <Property Name="DurumId" Type="int" />
+          <Property Name="ArizaId" Type="int" />
+          <Property Name="Aksesuar" Type="varchar" MaxLength="50" />
+          <Property Name="HasarGorunumId" Type="int" />
+          <Property Name="IslemId" Type="int" />
+          <Property Name="ParcaUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IscılıkUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ArizaTespitUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ToplamUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ServisTurId" Type="int" />
+          <Property Name="DısServisBolgeId" Type="int" />
+          <Property Name="DısServisGidisTarih" Type="datetime" Nullable="false" />
+          <Property Name="AciklamaId" Type="int" />
+          <Property Name="ServisDurumId" Type="int" />
+          <Property Name="SonucId" Type="int" />
+          <Property Name="BitisTarih" Type="datetime" Nullable="false" />
+          <Property Name="TeslimTarih" Type="datetime" Nullable="false" />
+          <Property Name="TeslimSekilId" Type="int" />
+          <Property Name="KargoId" Type="int" />
+          <Property Name="KargoTakipNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Marka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MarkaAd" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelAd" Type="varchar" MaxLength="300" />
+          <Property Name="MarkaId" Type="int" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Adres" Type="varchar" MaxLength="200" />
+          <Property Name="GsmNo" Type="varchar" MaxLength="15" />
+          <Property Name="TelefonNo" Type="varchar" MaxLength="15" />
+          <Property Name="Mail" Type="varchar" MaxLength="30" />
+          <Property Name="TCNo" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SaticiFirma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaticiFirmaAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Servis">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServisTurId" Type="int" />
+          <Property Name="GelisTarih" Type="datetime" />
+          <Property Name="DurumId" Type="int" />
+          <Property Name="IslemId" Type="int" />
+          <Property Name="AciklamaId" Type="int" />
+          <Property Name="SonucId" Type="int" />
+          <Property Name="BitisTarih" Type="datetime" />
+          <Property Name="TeslimTarih" Type="datetime" />
+          <Property Name="TeslimSekilId" Type="int" />
+          <Property Name="KargoId" Type="int" />
+          <Property Name="KargoTakipNo" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ServisDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServisDurumAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ServisTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServisTurAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sonuc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SonucAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TeslimSekil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeslimSekilAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBServisTakip.dbo.VKayit' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VKayit">
+          <Key>
+            <PropertyRef Name="Id" />
+            
+            
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GelisTarih" Type="datetime" Nullable="false" />
+          <Property Name="SeriNo" Type="varchar" MaxLength="50" />
+          <Property Name="ToplamUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CihazTur" Type="varchar" MaxLength="30" />
+          <Property Name="ServisDurum" Type="varchar" MaxLength="50" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="300" />
+          <Property Name="MusteriAd" Type="varchar" MaxLength="50" />
+          <Property Name="Aksesuar" Type="varchar" MaxLength="50" />
+          <Property Name="ServisTur" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBServisTakip.dbo.VKayitDetay' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VKayitDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="GelisTarih" />
+            <PropertyRef Name="Marka" />
+            
+            
+            
+            
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GelisTarih" Type="datetime" Nullable="false" />
+          <Property Name="SeriNo" Type="varchar" MaxLength="50" />
+          <Property Name="ToplamUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CihazTur" Type="varchar" MaxLength="30" />
+          <Property Name="ServisDurum" Type="varchar" MaxLength="50" />
+          <Property Name="Marka" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="300" />
+          <Property Name="MusteriAd" Type="varchar" MaxLength="50" />
+          <Property Name="Aksesuar" Type="varchar" MaxLength="50" />
+          <Property Name="Adres" Type="varchar" MaxLength="100" />
+          <Property Name="TelNo" Type="varchar" MaxLength="50" />
+          <Property Name="GsmNo" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="TCNo" Type="varchar" MaxLength="50" />
+          <Property Name="FaturaTarih" Type="datetime" Nullable="false" />
+          <Property Name="TakipNo" Type="varchar" MaxLength="50" />
+          <Property Name="ParcaUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IscılıkUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ArizaTespitUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DısServisGidisTarih" Type="datetime" Nullable="false" />
+          <Property Name="BitisTarih" Type="datetime" Nullable="false" />
+          <Property Name="TeslimTarih" Type="datetime" Nullable="false" />
+          <Property Name="KargoTakipNo" Type="varchar" MaxLength="50" />
+          <Property Name="Ariza" Type="varchar" MaxLength="50" />
+          <Property Name="DısServisBolge" Type="varchar" MaxLength="50" />
+          <Property Name="Durum" Type="varchar" MaxLength="30" />
+          <Property Name="HasarGorunum" Type="varchar" MaxLength="50" />
+          <Property Name="Islem" Type="varchar" MaxLength="50" />
+          <Property Name="Kargo" Type="varchar" MaxLength="30" />
+          <Property Name="SaticiFirma" Type="varchar" MaxLength="50" />
+          <Property Name="ServisTur" Type="varchar" MaxLength="50" />
+          <Property Name="Sonuc" Type="varchar" MaxLength="50" />
+          <Property Name="TeslimSekil" Type="varchar" MaxLength="50" />
+          <Property Name="GarantiBilgi" Type="varchar" MaxLength="30" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Cihaz_GarantiDurum">
+          <End Role="GarantiBilgi" Type="Self.GarantiBilgi" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GarantiBilgi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="GarantiBilgiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_GenelDurum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="GenelDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_SaticiFirma">
+          <End Role="SaticiFirma" Type="Self.SaticiFirma" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaticiFirma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="SaticiFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_Tur">
+          <End Role="CihazTur" Type="Self.CihazTur" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CihazTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="TurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Aciklama">
+          <End Role="Aciklama" Type="Self.Aciklama" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aciklama">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="AciklamaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Ariza">
+          <End Role="Ariza" Type="Self.Ariza" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ariza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ArizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_CihazDurum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="DurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_DısServisBolge">
+          <End Role="DısServisBolge" Type="Self.DısServisBolge" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DısServisBolge">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="DısServisBolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Durum">
+          <End Role="ServisDurum" Type="Self.ServisDurum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServisDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ServisDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_GarantiBilgi">
+          <End Role="GarantiBilgi" Type="Self.GarantiBilgi" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GarantiBilgi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="GarantiBilgiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_HasarGorunum">
+          <End Role="HasarGorunum" Type="Self.HasarGorunum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HasarGorunum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="HasarGorunumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Islem">
+          <End Role="Islem" Type="Self.Islem" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Islem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="IslemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Kargo">
+          <End Role="Kargo" Type="Self.Kargo" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kargo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="KargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="MarkaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_SaticiFirma">
+          <End Role="SaticiFirma" Type="Self.SaticiFirma" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaticiFirma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="SaticiFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_ServisTur">
+          <End Role="ServisTur" Type="Self.ServisTur" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServisTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ServisTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Sonuc">
+          <End Role="Sonuc" Type="Self.Sonuc" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sonuc">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="SonucId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_TeslimSekil">
+          <End Role="TeslimSekil" Type="Self.TeslimSekil" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeslimSekil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="TeslimSekilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Tur">
+          <End Role="CihazTur" Type="Self.CihazTur" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CihazTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="CihazTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Model_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Model" Type="Self.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="MarkaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="DBServisTakipModelStoreContainer">
+          <EntitySet Name="Aciklama" EntityType="Self.Aciklama" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ariza" EntityType="Self.Ariza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cihaz" EntityType="Self.Cihaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CihazTur" EntityType="Self.CihazTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DısServisBolge" EntityType="Self.DısServisBolge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Durum" EntityType="Self.Durum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GarantiBilgi" EntityType="Self.GarantiBilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HasarGorunum" EntityType="Self.HasarGorunum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Islem" EntityType="Self.Islem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kargo" EntityType="Self.Kargo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kayit" EntityType="Self.Kayit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marka" EntityType="Self.Marka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaticiFirma" EntityType="Self.SaticiFirma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servis" EntityType="Self.Servis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServisDurum" EntityType="Self.ServisDurum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServisTur" EntityType="Self.ServisTur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sonuc" EntityType="Self.Sonuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeslimSekil" EntityType="Self.TeslimSekil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VKayit" EntityType="Self.VKayit" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VKayit].[Id] AS [Id], 
+    [VKayit].[GelisTarih] AS [GelisTarih], 
+    [VKayit].[SeriNo] AS [SeriNo], 
+    [VKayit].[ToplamUcret] AS [ToplamUcret], 
+    [VKayit].[CihazTur] AS [CihazTur], 
+    [VKayit].[ServisDurum] AS [ServisDurum], 
+    [VKayit].[Marka] AS [Marka], 
+    [VKayit].[Model] AS [Model], 
+    [VKayit].[MusteriAd] AS [MusteriAd], 
+    [VKayit].[Aksesuar] AS [Aksesuar], 
+    [VKayit].[ServisTur] AS [ServisTur]
+    FROM [dbo].[VKayit] AS [VKayit]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VKayitDetay" EntityType="Self.VKayitDetay" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VKayitDetay].[Id] AS [Id], 
+    [VKayitDetay].[GelisTarih] AS [GelisTarih], 
+    [VKayitDetay].[SeriNo] AS [SeriNo], 
+    [VKayitDetay].[ToplamUcret] AS [ToplamUcret], 
+    [VKayitDetay].[CihazTur] AS [CihazTur], 
+    [VKayitDetay].[ServisDurum] AS [ServisDurum], 
+    [VKayitDetay].[Marka] AS [Marka], 
+    [VKayitDetay].[Model] AS [Model], 
+    [VKayitDetay].[MusteriAd] AS [MusteriAd], 
+    [VKayitDetay].[Aksesuar] AS [Aksesuar], 
+    [VKayitDetay].[Adres] AS [Adres], 
+    [VKayitDetay].[TelNo] AS [TelNo], 
+    [VKayitDetay].[GsmNo] AS [GsmNo], 
+    [VKayitDetay].[Mail] AS [Mail], 
+    [VKayitDetay].[TCNo] AS [TCNo], 
+    [VKayitDetay].[FaturaTarih] AS [FaturaTarih], 
+    [VKayitDetay].[TakipNo] AS [TakipNo], 
+    [VKayitDetay].[ParcaUcret] AS [ParcaUcret], 
+    [VKayitDetay].[IscılıkUcret] AS [IscılıkUcret], 
+    [VKayitDetay].[ArizaTespitUcret] AS [ArizaTespitUcret], 
+    [VKayitDetay].[NakliyeUcret] AS [NakliyeUcret], 
+    [VKayitDetay].[IskontoUcret] AS [IskontoUcret], 
+    [VKayitDetay].[DısServisGidisTarih] AS [DısServisGidisTarih], 
+    [VKayitDetay].[BitisTarih] AS [BitisTarih], 
+    [VKayitDetay].[TeslimTarih] AS [TeslimTarih], 
+    [VKayitDetay].[KargoTakipNo] AS [KargoTakipNo], 
+    [VKayitDetay].[Ariza] AS [Ariza], 
+    [VKayitDetay].[DısServisBolge] AS [DısServisBolge], 
+    [VKayitDetay].[Durum] AS [Durum], 
+    [VKayitDetay].[HasarGorunum] AS [HasarGorunum], 
+    [VKayitDetay].[Islem] AS [Islem], 
+    [VKayitDetay].[Kargo] AS [Kargo], 
+    [VKayitDetay].[SaticiFirma] AS [SaticiFirma], 
+    [VKayitDetay].[ServisTur] AS [ServisTur], 
+    [VKayitDetay].[Sonuc] AS [Sonuc], 
+    [VKayitDetay].[TeslimSekil] AS [TeslimSekil], 
+    [VKayitDetay].[GarantiBilgi] AS [GarantiBilgi], 
+    [VKayitDetay].[Aciklama] AS [Aciklama]
+    FROM [dbo].[VKayitDetay] AS [VKayitDetay]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Cihaz_GarantiDurum" Association="Self.FK_Cihaz_GarantiDurum">
+            <End Role="GarantiBilgi" EntitySet="GarantiBilgi" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_GenelDurum" Association="Self.FK_Cihaz_GenelDurum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_Model" Association="Self.FK_Cihaz_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_SaticiFirma" Association="Self.FK_Cihaz_SaticiFirma">
+            <End Role="SaticiFirma" EntitySet="SaticiFirma" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_Tur" Association="Self.FK_Cihaz_Tur">
+            <End Role="CihazTur" EntitySet="CihazTur" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Aciklama" Association="Self.FK_Kayit_Aciklama">
+            <End Role="Aciklama" EntitySet="Aciklama" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Ariza" Association="Self.FK_Kayit_Ariza">
+            <End Role="Ariza" EntitySet="Ariza" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_CihazDurum" Association="Self.FK_Kayit_CihazDurum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_DısServisBolge" Association="Self.FK_Kayit_DısServisBolge">
+            <End Role="DısServisBolge" EntitySet="DısServisBolge" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Durum" Association="Self.FK_Kayit_Durum">
+            <End Role="ServisDurum" EntitySet="ServisDurum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_GarantiBilgi" Association="Self.FK_Kayit_GarantiBilgi">
+            <End Role="GarantiBilgi" EntitySet="GarantiBilgi" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_HasarGorunum" Association="Self.FK_Kayit_HasarGorunum">
+            <End Role="HasarGorunum" EntitySet="HasarGorunum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Islem" Association="Self.FK_Kayit_Islem">
+            <End Role="Islem" EntitySet="Islem" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Kargo" Association="Self.FK_Kayit_Kargo">
+            <End Role="Kargo" EntitySet="Kargo" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Marka" Association="Self.FK_Kayit_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Model" Association="Self.FK_Kayit_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_SaticiFirma" Association="Self.FK_Kayit_SaticiFirma">
+            <End Role="SaticiFirma" EntitySet="SaticiFirma" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_ServisTur" Association="Self.FK_Kayit_ServisTur">
+            <End Role="ServisTur" EntitySet="ServisTur" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Sonuc" Association="Self.FK_Kayit_Sonuc">
+            <End Role="Sonuc" EntitySet="Sonuc" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_TeslimSekil" Association="Self.FK_Kayit_TeslimSekil">
+            <End Role="TeslimSekil" EntitySet="TeslimSekil" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Tur" Association="Self.FK_Kayit_Tur">
+            <End Role="CihazTur" EntitySet="CihazTur" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Model_Marka" Association="Self.FK_Model_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBServisTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aciklama">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AciklamaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Aciklama" FromRole="Aciklama" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GirisTarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Ariza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArizaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Ariza" FromRole="Ariza" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Cihaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TurId" Type="Int32" />
+          <Property Name="ModelId" Type="Int32" />
+          <Property Name="SeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaTarih" Type="DateTime" Precision="3" />
+          <Property Name="SaticiFirmaId" Type="Int32" />
+          <Property Name="TakipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GarantiBilgiId" Type="Int32" />
+          <Property Name="GenelDurumId" Type="Int32" />
+          <Property Name="ArizaId" Type="Int32" />
+          <Property Name="Aksesuar" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HasarDısGorunumId" Type="Int32" />
+          <Property Name="ParcaUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="İscilikUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ArızaTespitUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ToplamUcret" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="GarantiBilgi" Relationship="Self.FK_Cihaz_GarantiDurum" FromRole="Cihaz" ToRole="GarantiBilgi" />
+          <NavigationProperty Name="Durum" Relationship="Self.FK_Cihaz_GenelDurum" FromRole="Cihaz" ToRole="Durum" />
+          <NavigationProperty Name="Model" Relationship="Self.FK_Cihaz_Model" FromRole="Cihaz" ToRole="Model" />
+          <NavigationProperty Name="SaticiFirma" Relationship="Self.FK_Cihaz_SaticiFirma" FromRole="Cihaz" ToRole="SaticiFirma" />
+          <NavigationProperty Name="CihazTur" Relationship="Self.FK_Cihaz_Tur" FromRole="Cihaz" ToRole="CihazTur" />
+        </EntityType>
+        <EntityType Name="CihazTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TurAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cihaz" Relationship="Self.FK_Cihaz_Tur" FromRole="CihazTur" ToRole="Cihaz" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Tur" FromRole="CihazTur" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="DısServisBolge">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolgeAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_DısServisBolge" FromRole="DısServisBolge" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Durum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DurumAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cihaz" Relationship="Self.FK_Cihaz_GenelDurum" FromRole="Durum" ToRole="Cihaz" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_CihazDurum" FromRole="Durum" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="GarantiBilgi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GarantiBilgiAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cihaz" Relationship="Self.FK_Cihaz_GarantiDurum" FromRole="GarantiBilgi" ToRole="Cihaz" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_GarantiBilgi" FromRole="GarantiBilgi" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="HasarGorunum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HasarGorunumAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_HasarGorunum" FromRole="HasarGorunum" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Islem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IslemAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Islem" FromRole="Islem" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Kargo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KargoAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Kargo" FromRole="Kargo" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Kayit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GsmNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TCNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GelisTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CihazTurId" Type="Int32" />
+          <Property Name="MarkaId" Type="Int32" />
+          <Property Name="ModelId" Type="Int32" />
+          <Property Name="SeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SaticiFirmaId" Type="Int32" />
+          <Property Name="TakipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GarantiBilgiId" Type="Int32" />
+          <Property Name="DurumId" Type="Int32" />
+          <Property Name="ArizaId" Type="Int32" />
+          <Property Name="Aksesuar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HasarGorunumId" Type="Int32" />
+          <Property Name="IslemId" Type="Int32" />
+          <Property Name="ParcaUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IscılıkUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ArizaTespitUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ToplamUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ServisTurId" Type="Int32" />
+          <Property Name="DısServisBolgeId" Type="Int32" />
+          <Property Name="DısServisGidisTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AciklamaId" Type="Int32" />
+          <Property Name="ServisDurumId" Type="Int32" />
+          <Property Name="SonucId" Type="Int32" />
+          <Property Name="BitisTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeslimTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TeslimSekilId" Type="Int32" />
+          <Property Name="KargoId" Type="Int32" />
+          <Property Name="KargoTakipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Aciklama" Relationship="Self.FK_Kayit_Aciklama" FromRole="Kayit" ToRole="Aciklama" />
+          <NavigationProperty Name="Ariza" Relationship="Self.FK_Kayit_Ariza" FromRole="Kayit" ToRole="Ariza" />
+          <NavigationProperty Name="CihazTur" Relationship="Self.FK_Kayit_Tur" FromRole="Kayit" ToRole="CihazTur" />
+          <NavigationProperty Name="DısServisBolge" Relationship="Self.FK_Kayit_DısServisBolge" FromRole="Kayit" ToRole="DısServisBolge" />
+          <NavigationProperty Name="Durum" Relationship="Self.FK_Kayit_CihazDurum" FromRole="Kayit" ToRole="Durum" />
+          <NavigationProperty Name="GarantiBilgi" Relationship="Self.FK_Kayit_GarantiBilgi" FromRole="Kayit" ToRole="GarantiBilgi" />
+          <NavigationProperty Name="HasarGorunum" Relationship="Self.FK_Kayit_HasarGorunum" FromRole="Kayit" ToRole="HasarGorunum" />
+          <NavigationProperty Name="Islem" Relationship="Self.FK_Kayit_Islem" FromRole="Kayit" ToRole="Islem" />
+          <NavigationProperty Name="Kargo" Relationship="Self.FK_Kayit_Kargo" FromRole="Kayit" ToRole="Kargo" />
+          <NavigationProperty Name="ServisDurum" Relationship="Self.FK_Kayit_Durum" FromRole="Kayit" ToRole="ServisDurum" />
+          <NavigationProperty Name="Marka" Relationship="Self.FK_Kayit_Marka" FromRole="Kayit" ToRole="Marka" />
+          <NavigationProperty Name="Model" Relationship="Self.FK_Kayit_Model" FromRole="Kayit" ToRole="Model" />
+          <NavigationProperty Name="SaticiFirma" Relationship="Self.FK_Kayit_SaticiFirma" FromRole="Kayit" ToRole="SaticiFirma" />
+          <NavigationProperty Name="ServisTur" Relationship="Self.FK_Kayit_ServisTur" FromRole="Kayit" ToRole="ServisTur" />
+          <NavigationProperty Name="Sonuc" Relationship="Self.FK_Kayit_Sonuc" FromRole="Kayit" ToRole="Sonuc" />
+          <NavigationProperty Name="TeslimSekil" Relationship="Self.FK_Kayit_TeslimSekil" FromRole="Kayit" ToRole="TeslimSekil" />
+        </EntityType>
+        <EntityType Name="Marka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MarkaAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Marka" FromRole="Marka" ToRole="Kayit" />
+          <NavigationProperty Name="Model" Relationship="Self.FK_Model_Marka" FromRole="Marka" ToRole="Model" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelAd" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="MarkaId" Type="Int32" />
+          <NavigationProperty Name="Cihaz" Relationship="Self.FK_Cihaz_Model" FromRole="Model" ToRole="Cihaz" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Model" FromRole="Model" ToRole="Kayit" />
+          <NavigationProperty Name="Marka" Relationship="Self.FK_Model_Marka" FromRole="Model" ToRole="Marka" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="GsmNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TCNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SaticiFirma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaticiFirmaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cihaz" Relationship="Self.FK_Cihaz_SaticiFirma" FromRole="SaticiFirma" ToRole="Cihaz" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_SaticiFirma" FromRole="SaticiFirma" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Servis">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServisTurId" Type="Int32" />
+          <Property Name="GelisTarih" Type="DateTime" Precision="3" />
+          <Property Name="DurumId" Type="Int32" />
+          <Property Name="IslemId" Type="Int32" />
+          <Property Name="AciklamaId" Type="Int32" />
+          <Property Name="SonucId" Type="Int32" />
+          <Property Name="BitisTarih" Type="DateTime" Precision="3" />
+          <Property Name="TeslimTarih" Type="DateTime" Precision="3" />
+          <Property Name="TeslimSekilId" Type="Int32" />
+          <Property Name="KargoId" Type="Int32" />
+          <Property Name="KargoTakipNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ServisDurum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServisDurumAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Durum" FromRole="ServisDurum" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="ServisTur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServisTurAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_ServisTur" FromRole="ServisTur" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="Sonuc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SonucAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_Sonuc" FromRole="Sonuc" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TeslimSekil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeslimSekilAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Kayit" Relationship="Self.FK_Kayit_TeslimSekil" FromRole="TeslimSekil" ToRole="Kayit" />
+        </EntityType>
+        <EntityType Name="VKayit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MusteriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GelisTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CihazTur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="SeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aksesuar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServisTur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServisDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToplamUcret" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="VKayitDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="GelisTarih" />
+            <PropertyRef Name="Marka" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GelisTarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SeriNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToplamUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CihazTur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ServisDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Marka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="MusteriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aksesuar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GsmNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TCNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FaturaTarih" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="TakipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ParcaUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IscılıkUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ArizaTespitUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NakliyeUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IskontoUcret" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DısServisGidisTarih" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="BitisTarih" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="TeslimTarih" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="KargoTakipNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ariza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DısServisBolge" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Durum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HasarGorunum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Islem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SaticiFirma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServisTur" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sonuc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TeslimSekil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GarantiBilgi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Kayit_Aciklama">
+          <End Role="Aciklama" Type="Self.Aciklama" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aciklama">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="AciklamaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Ariza">
+          <End Role="Ariza" Type="Self.Ariza" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ariza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ArizaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_GarantiDurum">
+          <End Role="GarantiBilgi" Type="Self.GarantiBilgi" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GarantiBilgi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="GarantiBilgiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_GenelDurum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="GenelDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_SaticiFirma">
+          <End Role="SaticiFirma" Type="Self.SaticiFirma" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaticiFirma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="SaticiFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cihaz_Tur">
+          <End Role="CihazTur" Type="Self.CihazTur" Multiplicity="0..1" />
+          <End Role="Cihaz" Type="Self.Cihaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CihazTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cihaz">
+              <PropertyRef Name="TurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Tur">
+          <End Role="CihazTur" Type="Self.CihazTur" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CihazTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="CihazTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_DısServisBolge">
+          <End Role="DısServisBolge" Type="Self.DısServisBolge" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DısServisBolge">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="DısServisBolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_CihazDurum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="DurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_GarantiBilgi">
+          <End Role="GarantiBilgi" Type="Self.GarantiBilgi" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GarantiBilgi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="GarantiBilgiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_HasarGorunum">
+          <End Role="HasarGorunum" Type="Self.HasarGorunum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HasarGorunum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="HasarGorunumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Islem">
+          <End Role="Islem" Type="Self.Islem" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Islem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="IslemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Kargo">
+          <End Role="Kargo" Type="Self.Kargo" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kargo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="KargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Durum">
+          <End Role="ServisDurum" Type="Self.ServisDurum" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServisDurum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ServisDurumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="MarkaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_SaticiFirma">
+          <End Role="SaticiFirma" Type="Self.SaticiFirma" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaticiFirma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="SaticiFirmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_ServisTur">
+          <End Role="ServisTur" Type="Self.ServisTur" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServisTur">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="ServisTurId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_Sonuc">
+          <End Role="Sonuc" Type="Self.Sonuc" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sonuc">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="SonucId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kayit_TeslimSekil">
+          <End Role="TeslimSekil" Type="Self.TeslimSekil" Multiplicity="0..1" />
+          <End Role="Kayit" Type="Self.Kayit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeslimSekil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kayit">
+              <PropertyRef Name="TeslimSekilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Model_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Model" Type="Self.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="MarkaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBServisTakip" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aciklama" EntityType="Self.Aciklama" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="Ariza" EntityType="Self.Ariza" />
+          <EntitySet Name="Cihaz" EntityType="Self.Cihaz" />
+          <EntitySet Name="CihazTur" EntityType="Self.CihazTur" />
+          <EntitySet Name="DısServisBolge" EntityType="Self.DısServisBolge" />
+          <EntitySet Name="Durum" EntityType="Self.Durum" />
+          <EntitySet Name="GarantiBilgi" EntityType="Self.GarantiBilgi" />
+          <EntitySet Name="HasarGorunum" EntityType="Self.HasarGorunum" />
+          <EntitySet Name="Islem" EntityType="Self.Islem" />
+          <EntitySet Name="Kargo" EntityType="Self.Kargo" />
+          <EntitySet Name="Kayit" EntityType="Self.Kayit" />
+          <EntitySet Name="Marka" EntityType="Self.Marka" />
+          <EntitySet Name="Model" EntityType="Self.Model" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+          <EntitySet Name="SaticiFirma" EntityType="Self.SaticiFirma" />
+          <EntitySet Name="Servis" EntityType="Self.Servis" />
+          <EntitySet Name="ServisDurum" EntityType="Self.ServisDurum" />
+          <EntitySet Name="ServisTur" EntityType="Self.ServisTur" />
+          <EntitySet Name="Sonuc" EntityType="Self.Sonuc" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TeslimSekil" EntityType="Self.TeslimSekil" />
+          <EntitySet Name="VKayit" EntityType="Self.VKayit" />
+          <EntitySet Name="VKayitDetay" EntityType="Self.VKayitDetay" />
+          <AssociationSet Name="FK_Kayit_Aciklama" Association="Self.FK_Kayit_Aciklama">
+            <End Role="Aciklama" EntitySet="Aciklama" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Ariza" Association="Self.FK_Kayit_Ariza">
+            <End Role="Ariza" EntitySet="Ariza" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_GarantiDurum" Association="Self.FK_Cihaz_GarantiDurum">
+            <End Role="GarantiBilgi" EntitySet="GarantiBilgi" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_GenelDurum" Association="Self.FK_Cihaz_GenelDurum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_Model" Association="Self.FK_Cihaz_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_SaticiFirma" Association="Self.FK_Cihaz_SaticiFirma">
+            <End Role="SaticiFirma" EntitySet="SaticiFirma" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cihaz_Tur" Association="Self.FK_Cihaz_Tur">
+            <End Role="CihazTur" EntitySet="CihazTur" />
+            <End Role="Cihaz" EntitySet="Cihaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Tur" Association="Self.FK_Kayit_Tur">
+            <End Role="CihazTur" EntitySet="CihazTur" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_DısServisBolge" Association="Self.FK_Kayit_DısServisBolge">
+            <End Role="DısServisBolge" EntitySet="DısServisBolge" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_CihazDurum" Association="Self.FK_Kayit_CihazDurum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_GarantiBilgi" Association="Self.FK_Kayit_GarantiBilgi">
+            <End Role="GarantiBilgi" EntitySet="GarantiBilgi" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_HasarGorunum" Association="Self.FK_Kayit_HasarGorunum">
+            <End Role="HasarGorunum" EntitySet="HasarGorunum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Islem" Association="Self.FK_Kayit_Islem">
+            <End Role="Islem" EntitySet="Islem" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Kargo" Association="Self.FK_Kayit_Kargo">
+            <End Role="Kargo" EntitySet="Kargo" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Durum" Association="Self.FK_Kayit_Durum">
+            <End Role="ServisDurum" EntitySet="ServisDurum" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Marka" Association="Self.FK_Kayit_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Model" Association="Self.FK_Kayit_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_SaticiFirma" Association="Self.FK_Kayit_SaticiFirma">
+            <End Role="SaticiFirma" EntitySet="SaticiFirma" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_ServisTur" Association="Self.FK_Kayit_ServisTur">
+            <End Role="ServisTur" EntitySet="ServisTur" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_Sonuc" Association="Self.FK_Kayit_Sonuc">
+            <End Role="Sonuc" EntitySet="Sonuc" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kayit_TeslimSekil" Association="Self.FK_Kayit_TeslimSekil">
+            <End Role="TeslimSekil" EntitySet="TeslimSekil" />
+            <End Role="Kayit" EntitySet="Kayit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Model_Marka" Association="Self.FK_Model_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBServisTakipModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBServisTakipModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBServisTakipModelStoreContainer" CdmEntityContainer="DBServisTakip">
+          <EntitySetMapping Name="Aciklama">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Aciklama">
+              <MappingFragment StoreEntitySet="Aciklama">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AciklamaAd" ColumnName="AciklamaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="GirisTarih" ColumnName="GirisTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ariza">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Ariza">
+              <MappingFragment StoreEntitySet="Ariza">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ArizaAd" ColumnName="ArizaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cihaz">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Cihaz">
+              <MappingFragment StoreEntitySet="Cihaz">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TurId" ColumnName="TurId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+                <ScalarProperty Name="SaticiFirmaId" ColumnName="SaticiFirmaId" />
+                <ScalarProperty Name="TakipNo" ColumnName="TakipNo" />
+                <ScalarProperty Name="GarantiBilgiId" ColumnName="GarantiBilgiId" />
+                <ScalarProperty Name="GenelDurumId" ColumnName="GenelDurumId" />
+                <ScalarProperty Name="ArizaId" ColumnName="ArizaId" />
+                <ScalarProperty Name="Aksesuar" ColumnName="Aksesuar" />
+                <ScalarProperty Name="HasarDısGorunumId" ColumnName="HasarDısGorunumId" />
+                <ScalarProperty Name="ParcaUcret" ColumnName="ParcaUcret" />
+                <ScalarProperty Name="İscilikUcret" ColumnName="İscilikUcret" />
+                <ScalarProperty Name="ArızaTespitUcret" ColumnName="ArızaTespitUcret" />
+                <ScalarProperty Name="NakliyeUcret" ColumnName="NakliyeUcret" />
+                <ScalarProperty Name="IskontoUcret" ColumnName="IskontoUcret" />
+                <ScalarProperty Name="ToplamUcret" ColumnName="ToplamUcret" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CihazTur">
+            <EntityTypeMapping TypeName="DBServisTakipModel.CihazTur">
+              <MappingFragment StoreEntitySet="CihazTur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TurAd" ColumnName="TurAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DısServisBolge">
+            <EntityTypeMapping TypeName="DBServisTakipModel.DısServisBolge">
+              <MappingFragment StoreEntitySet="DısServisBolge">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BolgeAd" ColumnName="BolgeAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Durum">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Durum">
+              <MappingFragment StoreEntitySet="Durum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DurumAd" ColumnName="DurumAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GarantiBilgi">
+            <EntityTypeMapping TypeName="DBServisTakipModel.GarantiBilgi">
+              <MappingFragment StoreEntitySet="GarantiBilgi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GarantiBilgiAd" ColumnName="GarantiBilgiAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HasarGorunum">
+            <EntityTypeMapping TypeName="DBServisTakipModel.HasarGorunum">
+              <MappingFragment StoreEntitySet="HasarGorunum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HasarGorunumAd" ColumnName="HasarGorunumAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Islem">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Islem">
+              <MappingFragment StoreEntitySet="Islem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IslemAd" ColumnName="IslemAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kargo">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Kargo">
+              <MappingFragment StoreEntitySet="Kargo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KargoAd" ColumnName="KargoAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kayit">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Kayit">
+              <MappingFragment StoreEntitySet="Kayit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="GsmNo" ColumnName="GsmNo" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="TCNo" ColumnName="TCNo" />
+                <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
+                <ScalarProperty Name="CihazTurId" ColumnName="CihazTurId" />
+                <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+                <ScalarProperty Name="ModelId" ColumnName="ModelId" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+                <ScalarProperty Name="SaticiFirmaId" ColumnName="SaticiFirmaId" />
+                <ScalarProperty Name="TakipNo" ColumnName="TakipNo" />
+                <ScalarProperty Name="GarantiBilgiId" ColumnName="GarantiBilgiId" />
+                <ScalarProperty Name="DurumId" ColumnName="DurumId" />
+                <ScalarProperty Name="ArizaId" ColumnName="ArizaId" />
+                <ScalarProperty Name="Aksesuar" ColumnName="Aksesuar" />
+                <ScalarProperty Name="HasarGorunumId" ColumnName="HasarGorunumId" />
+                <ScalarProperty Name="IslemId" ColumnName="IslemId" />
+                <ScalarProperty Name="ParcaUcret" ColumnName="ParcaUcret" />
+                <ScalarProperty Name="IscılıkUcret" ColumnName="IscılıkUcret" />
+                <ScalarProperty Name="ArizaTespitUcret" ColumnName="ArizaTespitUcret" />
+                <ScalarProperty Name="NakliyeUcret" ColumnName="NakliyeUcret" />
+                <ScalarProperty Name="IskontoUcret" ColumnName="IskontoUcret" />
+                <ScalarProperty Name="ToplamUcret" ColumnName="ToplamUcret" />
+                <ScalarProperty Name="ServisTurId" ColumnName="ServisTurId" />
+                <ScalarProperty Name="DısServisBolgeId" ColumnName="DısServisBolgeId" />
+                <ScalarProperty Name="DısServisGidisTarih" ColumnName="DısServisGidisTarih" />
+                <ScalarProperty Name="AciklamaId" ColumnName="AciklamaId" />
+                <ScalarProperty Name="ServisDurumId" ColumnName="ServisDurumId" />
+                <ScalarProperty Name="SonucId" ColumnName="SonucId" />
+                <ScalarProperty Name="BitisTarih" ColumnName="BitisTarih" />
+                <ScalarProperty Name="TeslimTarih" ColumnName="TeslimTarih" />
+                <ScalarProperty Name="TeslimSekilId" ColumnName="TeslimSekilId" />
+                <ScalarProperty Name="KargoId" ColumnName="KargoId" />
+                <ScalarProperty Name="KargoTakipNo" ColumnName="KargoTakipNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marka">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Marka">
+              <MappingFragment StoreEntitySet="Marka">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MarkaAd" ColumnName="MarkaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Model">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Model">
+              <MappingFragment StoreEntitySet="Model">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ModelAd" ColumnName="ModelAd" />
+                <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="GsmNo" ColumnName="GsmNo" />
+                <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="TCNo" ColumnName="TCNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaticiFirma">
+            <EntityTypeMapping TypeName="DBServisTakipModel.SaticiFirma">
+              <MappingFragment StoreEntitySet="SaticiFirma">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SaticiFirmaAd" ColumnName="SaticiFirmaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servis">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Servis">
+              <MappingFragment StoreEntitySet="Servis">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServisTurId" ColumnName="ServisTurId" />
+                <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
+                <ScalarProperty Name="DurumId" ColumnName="DurumId" />
+                <ScalarProperty Name="IslemId" ColumnName="IslemId" />
+                <ScalarProperty Name="AciklamaId" ColumnName="AciklamaId" />
+                <ScalarProperty Name="SonucId" ColumnName="SonucId" />
+                <ScalarProperty Name="BitisTarih" ColumnName="BitisTarih" />
+                <ScalarProperty Name="TeslimTarih" ColumnName="TeslimTarih" />
+                <ScalarProperty Name="TeslimSekilId" ColumnName="TeslimSekilId" />
+                <ScalarProperty Name="KargoId" ColumnName="KargoId" />
+                <ScalarProperty Name="KargoTakipNo" ColumnName="KargoTakipNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServisDurum">
+            <EntityTypeMapping TypeName="DBServisTakipModel.ServisDurum">
+              <MappingFragment StoreEntitySet="ServisDurum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServisDurumAd" ColumnName="ServisDurumAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServisTur">
+            <EntityTypeMapping TypeName="DBServisTakipModel.ServisTur">
+              <MappingFragment StoreEntitySet="ServisTur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServisTurAd" ColumnName="ServisTurAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sonuc">
+            <EntityTypeMapping TypeName="DBServisTakipModel.Sonuc">
+              <MappingFragment StoreEntitySet="Sonuc">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SonucAd" ColumnName="SonucAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBServisTakipModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeslimSekil">
+            <EntityTypeMapping TypeName="DBServisTakipModel.TeslimSekil">
+              <MappingFragment StoreEntitySet="TeslimSekil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TeslimSekilAd" ColumnName="TeslimSekilAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VKayit">
+            <EntityTypeMapping TypeName="DBServisTakipModel.VKayit">
+              <MappingFragment StoreEntitySet="VKayit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="ToplamUcret" ColumnName="ToplamUcret" />
+                <ScalarProperty Name="CihazTur" ColumnName="CihazTur" />
+                <ScalarProperty Name="ServisDurum" ColumnName="ServisDurum" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+                <ScalarProperty Name="Aksesuar" ColumnName="Aksesuar" />
+                <ScalarProperty Name="ServisTur" ColumnName="ServisTur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VKayitDetay">
+            <EntityTypeMapping TypeName="DBServisTakipModel.VKayitDetay">
+              <MappingFragment StoreEntitySet="VKayitDetay">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="ToplamUcret" ColumnName="ToplamUcret" />
+                <ScalarProperty Name="CihazTur" ColumnName="CihazTur" />
+                <ScalarProperty Name="ServisDurum" ColumnName="ServisDurum" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="MusteriAd" ColumnName="MusteriAd" />
+                <ScalarProperty Name="Aksesuar" ColumnName="Aksesuar" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="GsmNo" ColumnName="GsmNo" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="TCNo" ColumnName="TCNo" />
+                <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+                <ScalarProperty Name="TakipNo" ColumnName="TakipNo" />
+                <ScalarProperty Name="ParcaUcret" ColumnName="ParcaUcret" />
+                <ScalarProperty Name="IscılıkUcret" ColumnName="IscılıkUcret" />
+                <ScalarProperty Name="ArizaTespitUcret" ColumnName="ArizaTespitUcret" />
+                <ScalarProperty Name="NakliyeUcret" ColumnName="NakliyeUcret" />
+                <ScalarProperty Name="IskontoUcret" ColumnName="IskontoUcret" />
+                <ScalarProperty Name="DısServisGidisTarih" ColumnName="DısServisGidisTarih" />
+                <ScalarProperty Name="BitisTarih" ColumnName="BitisTarih" />
+                <ScalarProperty Name="TeslimTarih" ColumnName="TeslimTarih" />
+                <ScalarProperty Name="KargoTakipNo" ColumnName="KargoTakipNo" />
+                <ScalarProperty Name="Ariza" ColumnName="Ariza" />
+                <ScalarProperty Name="DısServisBolge" ColumnName="DısServisBolge" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="HasarGorunum" ColumnName="HasarGorunum" />
+                <ScalarProperty Name="Islem" ColumnName="Islem" />
+                <ScalarProperty Name="Kargo" ColumnName="Kargo" />
+                <ScalarProperty Name="SaticiFirma" ColumnName="SaticiFirma" />
+                <ScalarProperty Name="ServisTur" ColumnName="ServisTur" />
+                <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+                <ScalarProperty Name="TeslimSekil" ColumnName="TeslimSekil" />
+                <ScalarProperty Name="GarantiBilgi" ColumnName="GarantiBilgi" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBServisTakipModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBServisTakipModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBServisTakipModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBServisTakipModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBServisTakipModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBServisTakipModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBServisTakipModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBServisTakipModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBServisTakipModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
